@@ -8,9 +8,11 @@ class Header {
   }
 
   attachEvents() {
-    this.$el
-      .querySelector('.header__toggle')
-      .addEventListener('click', this._actionToggle.bind(this));
+    if (this.$el.querySelector('.header__toggle')) {
+      this.$el
+        .querySelector('.header__toggle')
+        .addEventListener('click', this._actionToggle.bind(this));
+    }
   }
 
   _actionToggle(event) {
