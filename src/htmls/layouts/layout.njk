@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:site_name" content="{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <title>{{ title }}</title>
+
+    <meta name="description" content="{{ description }}">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <main class="main">
+
+      {% include '~components/header.njk' %}
+
+      {% block content %}{% endblock %}
+
+      {% include '~components/footer.njk' %}
+
+    </main>
+
+    <script src="app_bundle.js"></script>
+  </body>
+</html>
