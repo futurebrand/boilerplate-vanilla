@@ -1,4 +1,4 @@
-# Landing AdventistasPE
+# Boilerplate Vanilla
 
 Project stack:
 
