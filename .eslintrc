@@ -44,13 +44,7 @@
         "after": true
       }
     ],
-    "array-bracket-spacing": [
-      2,
-      "always",
-      {
-        "objectsInArrays": false
-      }
-    ],
+    "array-bracket-spacing": ["error", "never"],
     "no-trailing-spaces": ["error", { "skipBlankLines": true }]
   }
 }

@@ -14,7 +14,7 @@ import Home from './views/home';
 class App {
   initialize() {
     this.oldCurTop = 0;
-    this.components = [ new Header() ];
+    this.components = [new Header()];
 
     this.setComponents();
     this.setViews();
@@ -49,7 +49,7 @@ class App {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    this.components.forEach(component => {
+    this.components.forEach((component) => {
       if (typeof component.resize === 'function') {
         component.resize(width, height);
       }
@@ -67,7 +67,7 @@ class App {
         : window.scrollY;
 
     if (this.components.length) {
-      this.components.forEach(component => {
+      this.components.forEach((component) => {
         if (typeof component.scroll === 'function') {
           component.scroll(curTop, this.oldCurTop);
         }
@@ -82,7 +82,7 @@ class App {
   }
 
   setComponents() {
-    this.components.forEach(component => {
+    this.components.forEach((component) => {
       component.initialize();
     });
   }
