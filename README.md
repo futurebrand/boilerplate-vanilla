@@ -3,7 +3,7 @@
 Project stack:
 
 - Sass/Postcss
-- Lint (Eslint, Prettier e Stylelint)
+- Lint (Eslint and Prettier)
 - Precommit Lints
 - Visual Studio Code config like Chrome Debugger and Lint Integration
 
@@ -24,8 +24,8 @@ Here are the commands that are used in the project:
 ## Setup of your IDE
 
 To maintain code quality and always have a standard across all of the team's
-project has rules defined for javascript and css / scss. We use the Eslint /
-Prettier for Javascript and Stylelint for SCSS. It is necessary to
+project has rules defined for javascript and css / scss. We use the Eslint and 
+Prettier for Javascript. It is necessary to
 integration of these rules with your favorite IDE. We recommend using Visual
 Studio Code with the following plugins:
 
@@ -33,7 +33,6 @@ Studio Code with the following plugins:
 | --------- | ------------------------------------------------------------------------------------------ |
 | ESlint    | [check plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) |
 | Prettier  | [check plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) |
-| stylelint | [check plugin](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)       |
 
 ## Pre-commit
 
