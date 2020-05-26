@@ -1,3 +1,5 @@
+import 'regenerator-runtime/runtime';
+import 'core-js/stable';
 import './polyfills/foreach';
 import 'whatwg-fetch';
 import 'promise-polyfill/src/polyfill';

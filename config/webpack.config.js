@@ -3,21 +3,12 @@ const webpack = require('webpack');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-const pages = [ 'index' ];
-
-const arrPagesHtml = pages.map(n => {
-  return new HtmlWebpackPlugin({
-    template: `src/htmls/${n}.njk`,
-    filename: `${n}.html`
-  });
-});
-
 module.exports = {
   entry: [
+    'regenerator-runtime/runtime',
     path.resolve(__dirname, '../src/javascripts/app.js'),
     path.resolve(__dirname, '../src/styles/style.scss')
   ],
@@ -30,7 +21,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 8080,
     publicPath: '/',
-    contentBase: path.resolve(__dirname, '../src/'),
+    contentBase: path.resolve(__dirname, '../public/'),
     watchContentBase: true,
     headers: {
       'Access-Control-Allow-Origin': '*'
@@ -65,21 +56,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.(njk|nunjucks)$/,
-        use: [
-          'html-withimg-loader',
-          {
-            loader: 'nunjucks-webpack-loader',
-            options: {
-              alias: {
-                layouts: path.resolve(__dirname, '../src/htmls/layouts'),
-                components: path.resolve(__dirname, '../src/htmls/components')
-              }
-            }
-          }
-        ]
-      },
-      {
         test: /\.(png|jpg|jpeg|gif|svg|otf|ttf|eot|woff)$/,
         use: [
           {
@@ -106,5 +82,5 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'style.css' }),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new LiveReloadPlugin()
-  ].concat(arrPagesHtml)
+  ]
 };
